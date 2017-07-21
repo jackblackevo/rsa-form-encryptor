@@ -1,15 +1,14 @@
 const gulp = require('gulp')
-const browserify = require('gulp-browserify')
+const browserify = require('browserify')
+const source = require('vinyl-source-stream')
+const buffer = require('vinyl-buffer')
 const uglify = require('gulp-uglify')
-const rename = require("gulp-rename")
 
 gulp.task('default', function () {
-  return gulp.src('./src/rsa-form-encryptor.js')
-    .pipe(browserify())
+  return browserify('./src/rsa-form-encryptor.js')
+    .bundle()
+    .pipe(source('rsa-form-encryptor.min.js'))
+    .pipe(buffer())
     .pipe(uglify())
-    .pipe(rename(function (path) {
-      path.basename += ".min"
-      path.extname = ".js"
-    }))
     .pipe(gulp.dest('./dist'))
 })
