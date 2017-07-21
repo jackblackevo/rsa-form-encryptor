@@ -1,0 +1,11 @@
+{
+  "name": "rsa-form-encryptor",
+  "version": "1.0.0",
+  "description": "A simple RSA encrptor to encrypt, and submit the HTML form.",
+  "main": "dist/rsa-form-encryptor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tse-Hsien Chiang",
+  "license": "ISC"
+}
