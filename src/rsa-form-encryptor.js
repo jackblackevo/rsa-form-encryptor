@@ -52,9 +52,7 @@ var JSEncrypt = jsencryptModule.JSEncrypt
       Array.prototype.forEach.call(values, function (value) {
         var value = isEncode ? formEncode(value) : value
 
-        if (typeof value === 'string') {
-          queryString += (queryString ? '&' : '') + key + '=' + value
-        }
+        queryString += (queryString ? '&' : '') + key + '=' + value
       })
 
       return queryString
